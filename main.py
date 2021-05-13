@@ -8,8 +8,7 @@ __human_name__ = 'arguments'
 def greet(name, greeting_template= 'Hello, person!'):
                
     if greeting_template != 'Hello, person!':
-        
-        greeting = str('What\'s up, '+ name+'!' )
+        greeting = greeting_template.replace('<name>', name)
         #print(greeting)
         return greeting
         
@@ -20,7 +19,7 @@ def greet(name, greeting_template= 'Hello, person!'):
         return greeting
 
 greet('Doc')
-greet('Bob', "What's up, <name>!")
+#greet('Bob', "What's up, <name>!")
 
 def force(mass, body= 'earth'):
     body_list = {
@@ -43,14 +42,13 @@ def force(mass, body= 'earth'):
     
     return force
 
-force(0.1, 'venus')
+#force(0.1, 'venus')
 
 def pull(m1, m2, d):
     G=6.674 * (10 ** -11)
-    #force=("{:.6f}".format(G * ((m1 * m2) / d ** 2)))
-    force = round(float(((G * (((m1 * m2) / d ** 2))))))
+    force = (G * (m1 * m2) / d ** 2)
    
-    #print(force)
+    print(force)
     return force
     
 
